@@ -46,3 +46,7 @@ __pycache__/
 .env
 *.secret
 .Renviron
+
+# ===== reference code template ====
+Code_template.Rmd
+Code_template.R
