@@ -13,16 +13,16 @@
 
 - **Work pipeline**
   - Dataset preprocessing
-    ...
+    - Datasets will first be filtered to remove RNA contamination, cells with low quality and doublets. Then clustering and annotation will be applied to each dataset manually to identify macrophages.
   - Macrophage annotation<br>
     Macrophages will be manually annotated with selected markers:<br>
     macrophage_markers <- c('Ptprc','Adgre1', 'Itgam', 'Csf1r')
   - Macrophage subtype annotation<br>
     Macrophage will be extracted (if needed), reclustered and manually annotated based on the top-expressed genes and existing framework.
   - Dataset integration
-    ...
+    - Extracted macrophage datasets will be then integrated into one dataset. Harmony algorithm will be used to remove batch effects. Louvain algorithm will be applied in clustering.
   - Macrophage subtype characterization
-    ...
+    - Each cluster will be characterized by its marker genes and enriched functional pathways. FindMarkers() will be used to search marker genes, and clusterProfiler package will be used for pathway enrichment analysis.
 
 ## Reference Transfer to Individual Datasets
 - **Transfer method**
